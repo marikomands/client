@@ -1,7 +1,8 @@
-export const signIn = () => {
+export const signIn = (userId) => {
   console.log("🚀 ~ signIn ~ signIn");
   return {
     type: "SIGN_IN",
+    payload: userId,
   };
 };
 
