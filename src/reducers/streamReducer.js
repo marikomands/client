@@ -4,7 +4,7 @@ export default (state = {}, action) => {
   switch (action.type) {
     case "FETCH_STREAMS":
       return { ...state, ..._.mapKeys(action.payload, "id") };
-    // .mapKeys converts array to object 12 : id: 12
+    // .mapKeys converts array to object    "id"is the key of object which is 12.
     case "FETCH_STREAM":
       return { ...state, [action.payload.id]: action.payload };
     case "CREATE_STREAM":
