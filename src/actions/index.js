@@ -15,8 +15,11 @@ export const signOut = () => {
   };
 };
 
-export const createStream = (formValues) => async (dispatch) => {
-  const response = await streams.post("/streams", formValues);
+export const createStream = (formValues) => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+  const response = await streams.post("/streams", { ...formValues, userId });
+  // /streams is localhost:3001 end point.   show all title and description id, userId in jason format
+  console.log("🚀 ~ createStream ~ response", response);
   dispatch({ type: "CREATE_STREAM", payload: response.data });
 };
 
