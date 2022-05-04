@@ -22,6 +22,7 @@ class StreamCreate extends React.Component {
       <div className={className}>
         <label>{label}</label>
         <input {...input} />
+        {/* formProps.input.onChange and formProps.input.value */}
         <div>{this.renderError(meta)}</div>
       </div>
     );
