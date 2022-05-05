@@ -1,4 +1,5 @@
 import streams from "../apis/streams";
+import history from "../history";
 
 export const signIn = (userId) => {
   console.log("🚀 ~ signIn ~ signIn");
@@ -21,6 +22,7 @@ export const createStream = (formValues) => async (dispatch, getState) => {
   // /streams is localhost:3001 end point.   show all title and description id, userId in jason format
   console.log("🚀 ~ createStream ~ response", response);
   dispatch({ type: "CREATE_STREAM", payload: response.data });
+  history.push("/");
 };
 
 export const fetchStreams = () => async (dispatch) => {
