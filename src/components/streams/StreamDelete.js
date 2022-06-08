@@ -12,6 +12,7 @@ class StreamDelete extends React.Component {
 
   renderActions() {
     const id = this.props.match.params.id;
+    // or const {id}=this.props.match.params;
 
     return (
       <React.Fragment>
